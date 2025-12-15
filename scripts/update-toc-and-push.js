@@ -1,8 +1,9 @@
 // 读取文件目录
 const fs = require('fs')
 const path = require('path')
-const { globSync } = require('glob')
 const matter = require('gray-matter')
+const { globSync } = require('glob')
+const { execSync } = require('child_process')
 
 const DocsDir = path.join(process.cwd(), 'docs')
 
@@ -131,7 +132,7 @@ function writeTocToFile(tocContent, filePath) {
     const TOC_START = '<!-- AUTO_TOC_START -->'
     const TOC_END = '<!-- AUTO_TOC_END -->'
 
-    const tocBlock = [TOC_START, tocContent, TOC_END, '']
+    const tocBlock = [TOC_START, tocContent, TOC_END]
 
     const startIndex = lines.findIndex(l => l.includes(TOC_START))
     const endIndex = lines.findIndex(l => l.includes(TOC_END))
@@ -149,9 +150,9 @@ function writeTocToFile(tocContent, filePath) {
 }
 
 /**
- * 主函数
+ * 更新 TOC
  */
-function main() {
+function runUpdateToc() {
     const files = getAllMdFiles(DocsDir)
     const nodes = uniqByKey(buildNodes(files))
     const nodeTrees = genTree(nodes)
@@ -168,4 +169,43 @@ function main() {
     writeTocToFile(toc, tocFilePath)
     console.log('TOC generated successfully!')
 }
-main()
+
+/**
+ * 执行命令
+ */
+function runCommand(cmd) {
+    console.log(`\n> ${cmd}`)
+    execSync(cmd, { stdio: 'inherit', cwd: process.cwd() })
+}
+
+function run() {
+    try {
+        // 1. 更新 TOC
+        runUpdateToc()
+
+        // 2. git add
+        runCommand(`git add README.md`)
+
+        // 3. 判断是否有变更
+        // const diff = execSync('git diff --cached --name-only').toString().trim()
+        // console.log('===', diff)
+
+        // if (!diff) {
+        //     console.log('\nNo changes to commit.')
+        //     process.exit(0)
+        // }
+
+        // 3. git commit
+        // runCommand('git commit -m "docs: update toc"')
+
+        // 4. git push
+        // runCommand('git push')
+
+        console.log('\n✔ TOC updated and pushed successfully.')
+    } catch (error) {
+        console.error('\n✖ Script failed.', error)
+        process.exit(1)
+    }
+}
+
+run()

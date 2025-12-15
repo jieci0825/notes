@@ -4,7 +4,7 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "gen:toc": "node ./scripts/gen-toc.js"
+        "toc": "node ./scripts/update-toc-and-push.js"
     },
     "keywords": [],
     "author": "",
