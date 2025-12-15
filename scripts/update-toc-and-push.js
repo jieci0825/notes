@@ -7,6 +7,14 @@ const { execSync } = require('child_process')
 
 const DocsDir = path.join(process.cwd(), 'docs')
 
+const StatusTextMap = {
+    'be-editing': '编辑中',
+    'completed': '已完成',
+    'on-hold': '搁置中',
+    'draft': '草稿',
+    'abandoned': '已废弃'
+}
+
 /**
  * 生成节点
  * @param {*} names
@@ -21,7 +29,8 @@ function genNode(key, parentKey) {
         path: `.${path.sep}docs${path.sep}${key}`, // 相对地址
         children: isFile ? null : [],
         key,
-        parentKey
+        parentKey,
+        meta: null
     }
 
     return node
@@ -108,14 +117,21 @@ function generateToc(tree, level = 0) {
     let result = ''
 
     for (const node of tree) {
+        const statusText =
+            node.meta && node.meta.status
+                ? `${' --- [' + StatusTextMap[node.meta.status] + ']'}` ||
+                  node.meta.status
+                : ''
+
         // 目录
         if (Array.isArray(node.children)) {
             result += `${indent}- ${node.filename}\n`
             result += generateToc(node.children, level + 1)
         }
+
         // Markdown 文件
         else {
-            result += `${indent}- [${node.filename}](${node.path})\n`
+            result += `${indent}- [${node.filename}](${node.path})${statusText}\n`
         }
     }
 
