@@ -31,6 +31,13 @@ status: be-editing
 - **解包**: `tar -jxvpf [要解包的文件] [解包到哪里]`。解包到哪里省略的话，就是当前目录。
 - **cd ～**：切换到当前用户的家目录
 - **cd /**: 切换到文件系统的根目录
+- **wget**: 从网络下载文件
+  - **wget https://example.com/file.zip**: 从指定 URL 下载文件、文件会保存到 当前目录、文件名与远程文件名一致
+  - **wget -O local.zip https://example.com/file.zip**: `-O` 的作用是指定文件名
+  - **-c**: continue，支持中断后继续下载
+  - **-b**: 后台下载，适合 SSH 连接服务器，日志默认写入 wget-log
+  - **-P**: 下载到指定目录
+- 
 
 ## Linux-ssh
 
