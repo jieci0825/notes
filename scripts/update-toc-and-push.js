@@ -187,19 +187,19 @@ function run() {
         runCommand(`git add README.md`)
 
         // 3. 判断是否有变更
-        // const diff = execSync('git diff --cached --name-only').toString().trim()
-        // console.log('===', diff)
+        const diff = execSync('git diff --cached --name-only').toString().trim()
+        console.log('===', diff)
 
-        // if (!diff) {
-        //     console.log('\nNo changes to commit.')
-        //     process.exit(0)
-        // }
+        if (!diff) {
+            console.log('\nNo changes to commit.')
+            process.exit(0)
+        }
 
         // 3. git commit
-        // runCommand('git commit -m "docs: update toc"')
+        runCommand('git commit -m "docs: update toc"')
 
         // 4. git push
-        // runCommand('git push')
+        runCommand('git push')
 
         console.log('\n✔ TOC updated and pushed successfully.')
     } catch (error) {
