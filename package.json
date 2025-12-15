@@ -1,0 +1,17 @@
+{
+    "name": "notes",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "gen:toc": "node ./scripts/gen-toc.js"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "MIT",
+    "packageManager": "pnpm@10.20.0",
+    "dependencies": {
+        "glob": "^13.0.0",
+        "gray-matter": "^4.0.3"
+    }
+}
