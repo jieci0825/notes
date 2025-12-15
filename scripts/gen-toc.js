@@ -142,7 +142,7 @@ function writeTocToFile(tocContent, filePath) {
     } else {
         // 情况 2：不存在 TOC → 固定从第 2 行插入
         const insertIndex = Math.min(1, lines.length)
-        lines.splice(insertIndex, 0, tocContent)
+        lines.splice(insertIndex, 0, ...tocBlock)
     }
 
     fs.writeFileSync(filePath, lines.join('\n'))
