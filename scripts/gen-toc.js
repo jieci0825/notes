@@ -124,8 +124,28 @@ function generateToc(tree, level = 0) {
 /**
  * 将 toc 写入文件
  */
-function writeTocToFile(toc, filePath) {
-    fs.writeFileSync(filePath, toc, 'utf-8')
+function writeTocToFile(tocContent, filePath) {
+    const raw = fs.readFileSync(filePath, 'utf-8')
+    const lines = raw.split('\n')
+
+    const TOC_START = '<!-- AUTO_TOC_START -->'
+    const TOC_END = '<!-- AUTO_TOC_END -->'
+
+    const tocBlock = [TOC_START, tocContent, TOC_END, '']
+
+    const startIndex = lines.findIndex(l => l.includes(TOC_START))
+    const endIndex = lines.findIndex(l => l.includes(TOC_END))
+
+    if (startIndex !== -1 && endIndex !== -1 && endIndex > startIndex) {
+        // 情况 1：已存在 TOC → 直接替换
+        lines.splice(startIndex, endIndex - startIndex + 1, ...tocBlock)
+    } else {
+        // 情况 2：不存在 TOC → 固定从第 2 行插入
+        const insertIndex = Math.min(1, lines.length)
+        lines.splice(insertIndex, 0, tocContent)
+    }
+
+    fs.writeFileSync(filePath, lines.join('\n'))
 }
 
 /**
