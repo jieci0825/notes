@@ -1,3 +1,15 @@
 # notes
+<!-- AUTO_TOC_START -->
+- 运维
+  - [vim操作](./docs/运维/vim操作.md)
+  - [Linux操作](./docs/运维/Linux操作.md)
+- 开发技巧
+  - [关于useTable](./docs/开发技巧/关于useTable.md)
 
-> 记录我的一些学习笔记
+<!-- AUTO_TOC_END -->
+
+
+
+
+> 一些个人的随笔
+
