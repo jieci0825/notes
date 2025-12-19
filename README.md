@@ -8,5 +8,8 @@
   - [关于useTable](./docs/开发技巧/关于useTable.md) --- [已完成]
 - Vue
   - [Vue编译原理](./docs/Vue/Vue编译原理.md) --- [编辑中]
+- VSCode技巧
+  - [快捷键设置](./docs/VSCode技巧/快捷键设置.md) --- [编辑中]
+  - [代码片段配置](./docs/VSCode技巧/代码片段配置.md) --- [已完成]
 
 <!-- AUTO_TOC_END -->
