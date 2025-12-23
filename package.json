@@ -4,7 +4,8 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "toc": "node ./scripts/update-toc-and-push.js"
+        "toc": "node ./scripts/update-toc-and-push.js",
+        "docs:commit": "pnpm run toc && git add docs/ && git commit -m \"docs: update document\" && git push"
     },
     "keywords": [],
     "author": "",
