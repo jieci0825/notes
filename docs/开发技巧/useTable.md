@@ -2,7 +2,7 @@
 status: completed
 ---
 
-# 关于 useTable
+# useTable
 
 ## 源码
 
@@ -290,7 +290,7 @@ export function useTableComponent<T = any>(
 
 那么如何分开呢？本文的方案是提供 **两层 API**，满足不同的场景需求。分层结构如图：
 
-<img src="./关于useTable.assets/image-20251212123058941.png" alt="image-20251212123058941" style="zoom:50%;" />
+<img src="./useTable.assets/image-20251212123058941.png" alt="image-20251212123058941" style="zoom:50%;" />
 
 当业务的表格是标准化的、无特殊定制的情况时，那么通过更上层的 `useTableComponent` 就可以完成快速开发。而业务的表格 ui 需要高度自定义、需求复杂时，我们也可以使用 `useTable` 来简化数据的处理，专注于 ui 的开发。
 
@@ -302,7 +302,7 @@ export function useTableComponent<T = any>(
 
 想要搞清楚接收什么参数，就要回顾开发中，我们拿到数据都做了什么，如图：
 
-<img src="./关于useTable.assets/image-20251212144727019.png" alt="image-20251212144727019" style="zoom:50%;" />
+<img src="./useTable.assets/image-20251212144727019.png" alt="image-20251212144727019" style="zoom:50%;" />
 
 根据这些逻辑，我们可以写出 useTable 需要的参数类型，如下：
 
