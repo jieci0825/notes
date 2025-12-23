@@ -5,7 +5,7 @@
   - [Nginx操作](./docs/运维/Nginx操作.md) --- [编辑中]
   - [Linux操作](./docs/运维/Linux操作.md) --- [编辑中]
 - 开发技巧
-  - [关于useTable](./docs/开发技巧/关于useTable.md) --- [已完成]
+  - [useTable](./docs/开发技巧/useTable.md) --- [已完成]
   - [useDialog](./docs/开发技巧/useDialog.md) --- [草稿]
 - Vue
   - [Vue编译原理](./docs/Vue/Vue编译原理.md) --- [已完成]
