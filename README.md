@@ -6,8 +6,8 @@
   - [Linux操作](./docs/运维/Linux操作.md) --- [编辑中]
 - 开发技巧
   - [关于useTable](./docs/开发技巧/关于useTable.md) --- [已完成]
+  - [useDialog](./docs/开发技巧/useDialog.md) --- [草稿]
 - Vue
-  - [useDialog](./docs/Vue/useDialog.md) --- [草稿]
   - [Vue编译原理](./docs/Vue/Vue编译原理.md) --- [已完成]
 - VSCode技巧
   - [快捷键设置](./docs/VSCode技巧/快捷键设置.md) --- [编辑中]
