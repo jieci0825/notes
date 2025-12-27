@@ -1,9 +1,10 @@
 # notes
 <!-- AUTO_TOC_START -->
 - 运维
-  - [vim操作](./docs/运维/vim操作.md) --- [编辑中]
-  - [Nginx操作](./docs/运维/Nginx操作.md) --- [编辑中]
-  - [Linux操作](./docs/运维/Linux操作.md) --- [编辑中]
+  - [vim](./docs/运维/vim.md) --- [编辑中]
+  - [Nginx](./docs/运维/Nginx.md) --- [编辑中]
+  - [Linux](./docs/运维/Linux.md) --- [编辑中]
+  - [Docker](./docs/运维/Docker.md) --- [编辑中]
 - 开发技巧
   - [useTable](./docs/开发技巧/useTable.md) --- [已完成]
   - [useDialog](./docs/开发技巧/useDialog.md) --- [草稿]
