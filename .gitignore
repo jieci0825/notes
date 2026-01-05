@@ -19,6 +19,7 @@ package-lock.json
 !.vscode/extensions.json
 .idea
 .cursor
+.obsidian
 .DS_Store
 *.suo
 *.ntvs*

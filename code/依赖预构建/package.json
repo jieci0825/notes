@@ -1,0 +1,10 @@
+{
+    "version": "1.0.0",
+    "scripts": {},
+    "author": "",
+    "license": "ISC",
+    "description": "",
+    "dependencies": {
+        "lodash-es": "^4.17.22"
+    }
+}
