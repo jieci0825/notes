@@ -1,5 +1,5 @@
 ---
-status: be-editing
+status: completed
 ---
 ## 一、Docker 基础信息与环境检查
 
@@ -17,7 +17,6 @@ docker version
 **注意事项**
 
 - 如果 `Server` 部分报错，说明 Docker 服务未启动
-    
 
 ---
 
@@ -148,9 +147,7 @@ docker rmi 镜像ID
 docker run nginx
 ```
 
----
-
-#### 常见完整写法示例
+-  常见完整写法示例
 
 ```bash
 docker run -d \
@@ -453,14 +450,3 @@ docker system prune -a
     
 
 ---
-
-如果你愿意，我可以：
-
-- 帮你**裁剪成“面试版 / 新手版 / 运维版”**
-    
-- 或补充 **Docker + Node.js / Nginx / MySQL 实战示例**
-    
-- 或整理一份 **Docker + Docker Compose 对照文档**
-    
-
-你可以直接告诉我使用场景。
